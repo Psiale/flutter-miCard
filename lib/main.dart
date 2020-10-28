@@ -7,40 +7,47 @@ void main() {
 // Todas las propiedades de row aplican para column,
 // Si quieres expander un elemento puedes hacer que el main o el cross axis sean stretch
 
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.teal,
-        ),
-        body: Container(
-          color: Colors.teal,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              containerBuilder(Colors.red),
-              Container(
-                width: 100.0,
-                height: 200.0,
-                child: Column(
-                  children: [
-                    Container(
-                      width: 100.0,
-                      height: 100.0,
-                      color: Colors.yellow,
+        backgroundColor: Colors.deepPurple,
+        body: Center(
+          child: SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Column(
+                children: [
+                  CircleAvatar(
+                    backgroundColor: Colors.deepPurple[300],
+                    radius: 55.0,
+                    child: CircleAvatar(
+                      radius: 50.0,
+                      backgroundImage: AssetImage('./images/me.jpeg'),
                     ),
-                    Container(
-                        width: 100.0,
-                        height: 100.0,
-                        color: Color.fromRGBO(100, 200, 50, .7))
-                  ],
-                ),
+                  ),
+                  Text(
+                    'Alexis Sanchez',
+                    style: TextStyle(
+                        fontSize: 40.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'GrenzeGotisch'),
+                  ),
+                  Text(
+                    'FULLSTACK/MOBILE DEVELOPER',
+                    style: TextStyle(
+                        fontFamily: 'SourceSansPro',
+                        fontSize: 20.0,
+                        color: Colors.deepPurpleAccent.shade100,
+                        letterSpacing: 2.5,
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
               ),
-              containerBuilder(Colors.blue)
-            ],
+            ),
           ),
         ),
       ),
