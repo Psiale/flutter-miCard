@@ -7,7 +7,6 @@ void main() {
 // Todas las propiedades de row aplican para column,
 // Si quieres expander un elemento puedes hacer que el main o el cross axis sean stretch
 
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
